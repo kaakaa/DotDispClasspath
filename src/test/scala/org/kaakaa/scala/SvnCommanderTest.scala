@@ -11,8 +11,5 @@ class SvnCommanderTest extends FunSpec {
     it("list"){
       println(SvnCommander.recursiveList("http://localhost/svn/SampleProject"))
     }
-    it("list not authorized"){
-      println(SvnCommander.list("http://localhost/svn/SampleProject"))
-    }
   }
 }
