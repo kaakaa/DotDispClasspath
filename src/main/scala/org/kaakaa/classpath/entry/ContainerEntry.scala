@@ -1,15 +1,9 @@
 package org.kaakaa.classpath.entry
 
-import scala.xml.Elem
+import scala.xml.{Node, Elem}
 
 /**
  * Created by kaakaa_hoe on 2014/05/29.
  */
-class ContainerEntry private(entry: Elem) extends ClasspathEntry {
-}
-
-object ContainerEntry {
-  def apply(entry: Elem){
-    new ContainerEntry(entry)
-  }
+class ContainerEntry(entry: Node) extends ClasspathEntry {
 }

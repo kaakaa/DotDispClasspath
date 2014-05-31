@@ -1,10 +1,8 @@
 package org.kaakaa.classpath.xml
 
-import scala.xml.{XML, Elem, NodeSeq}
-import org.kaakaa.classpath.SvnCommander
+import scala.xml.{XML, NodeSeq}
+import org.kaakaa.classpath.{Project, SvnCommander}
 import org.kaakaa.classpath.entry.{ClasspathEntry, ContainerEntry, LibraryEntry}
-import java.awt.event.ContainerEvent
-import scala.collection.JavaConverters._
 
 /**
  * Created by kaakaa_hoe on 2014/05/26.
@@ -13,20 +11,26 @@ class JarNameFinder {
   val rootUrl = "http://localhost/svn/SampleProject/"
 
   def getDependencies(): String = {
-    var builder = List[ClasspathEntry]()
-
+    var projects = List[Project]
     SvnCommander.recursiveList(rootUrl) foreach {
-      getClasspathXML(_) foreach {
-        entry => {
-          entry \ "@kind" text match {
-            case "lib" => builder = new LibraryEntry(entry) :: builder
-            case "con" => builder = new ContainerEntry(entry) :: builder
-            case _ =>
-          }
+      projects = new Project(getClasspathEntries _) :: projects
+    }
+    projects
+  }
+
+  def getClasspathEntries(url: String): List[ClasspathEntry] = {
+    var list = List[_]
+
+    getClasspathXML(url) foreach {
+      entry => {
+        entry \ "@kind" text match {
+          case "lib" => list = new LibraryEntry(entry) :: list
+          case "con" => list = new ContainerEntry(entry) :: list
+          case _ =>
         }
       }
     }
-    builder.toString()
+    list
   }
 
   def getClasspathXML(url: String): NodeSeq = {

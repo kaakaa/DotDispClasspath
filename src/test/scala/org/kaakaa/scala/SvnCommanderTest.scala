@@ -11,5 +11,8 @@ class SvnCommanderTest extends FunSpec {
     it("list"){
       println(SvnCommander.recursiveList("http://localhost/svn/SampleProject"))
     }
+    it("cat"){
+      println(SvnCommander.cat("http://localhost/svn/SampleProject/WebProject/trunk/.classpath"))
+    }
   }
 }
