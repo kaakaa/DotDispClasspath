@@ -13,13 +13,12 @@ object SvnCommander {
     for(
       file <- list(url).split(sys.props("line.separator"))
       if ".classpath".equals(new File(file).getName())
-    ) classpathFiles = file :: classpathFiles
+    ) classpathFiles = url + file :: classpathFiles
 
     classpathFiles
   }
 
   def list(url: String): String = {
-    //Seq("svn", "list", url) !!
     Process("svn list --recursive " +  url) !!
   }
 

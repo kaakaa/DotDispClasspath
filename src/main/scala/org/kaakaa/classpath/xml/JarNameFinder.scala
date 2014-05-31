@@ -3,6 +3,7 @@ package org.kaakaa.classpath.xml
 import scala.xml.{XML, NodeSeq}
 import org.kaakaa.classpath.{Project, SvnCommander}
 import org.kaakaa.classpath.entry.{ClasspathEntry, ContainerEntry, LibraryEntry}
+import org.kaakaa.classpath.dot.DotFileCreater
 
 /**
  * Created by kaakaa_hoe on 2014/05/26.
@@ -10,10 +11,15 @@ import org.kaakaa.classpath.entry.{ClasspathEntry, ContainerEntry, LibraryEntry}
 class JarNameFinder {
   val rootUrl = "http://localhost/svn/SampleProject/"
 
+  def getDotText(): String = {
+    DotFileCreater.output(getDependencies())
+  }
+
   def getDependencies(): List[Project] = {
     var projects = List.empty[Project]
-    for(url <- SvnCommander.recursiveList(rootUrl)) {
-      projects = new Project(getClasspathEntries _) :: projects
+    for (url <- SvnCommander.recursiveList(rootUrl)) {
+      projects = new Project("NoName", getClasspathEntries(url)) :: projects
+
     }
     projects
   }
@@ -34,6 +40,7 @@ class JarNameFinder {
   }
 
   def getClasspathXML(url: String): NodeSeq = {
-    XML loadString SvnCommander.cat(rootUrl + url)
+    val classpath = XML loadString SvnCommander.cat(url)
+    classpath \ "classpathentry"
   }
 }
