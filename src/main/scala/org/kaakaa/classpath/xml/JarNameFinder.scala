@@ -10,16 +10,16 @@ import org.kaakaa.classpath.entry.{ClasspathEntry, ContainerEntry, LibraryEntry}
 class JarNameFinder {
   val rootUrl = "http://localhost/svn/SampleProject/"
 
-  def getDependencies(): String = {
-    var projects = List[Project]
-    SvnCommander.recursiveList(rootUrl) foreach {
+  def getDependencies(): List[Project] = {
+    var projects = List.empty[Project]
+    for(url <- SvnCommander.recursiveList(rootUrl)) {
       projects = new Project(getClasspathEntries _) :: projects
     }
     projects
   }
 
   def getClasspathEntries(url: String): List[ClasspathEntry] = {
-    var list = List[_]
+    var list = List.empty[ClasspathEntry]
 
     getClasspathXML(url) foreach {
       entry => {
