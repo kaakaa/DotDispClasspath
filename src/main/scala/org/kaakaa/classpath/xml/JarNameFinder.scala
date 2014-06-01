@@ -8,14 +8,8 @@ import org.kaakaa.classpath.dot.DotFileCreater
 /**
  * Created by kaakaa_hoe on 2014/05/26.
  */
-class JarNameFinder {
-  val rootUrl = "http://localhost/svn/SampleProject/"
-
-  def getDotText(): String = {
-    DotFileCreater.output(getDependencies())
-  }
-
-  def getDependencies(): List[Project] = {
+object JarNameFinder {
+  def getDependencies(rootUrl: String): List[Project] = {
     var projects = List.empty[Project]
     for (url <- SvnCommander.recursiveList(rootUrl)) {
       projects = new Project("NoName", getClasspathEntries(url)) :: projects

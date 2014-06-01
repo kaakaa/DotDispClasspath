@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dotdispclasspath.iml" filepath="$PROJECT_DIR$/.idea/modules/dotdispclasspath.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DotDispClasspath.iml" filepath="$PROJECT_DIR$/.idea/modules/DotDispClasspath.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dotdispclasspath-build.iml" filepath="$PROJECT_DIR$/.idea/modules/dotdispclasspath-build.iml" />
     </modules>
   </component>
