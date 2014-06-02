@@ -1,4 +1,4 @@
-package org.kaakaa.classpath
+package org.kaakaa.classpath.ide
 
 import scala.xml.Node
 

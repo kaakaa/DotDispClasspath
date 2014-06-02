@@ -1,9 +1,9 @@
 package org.kaakaa.classpath.dot
 
-import org.kaakaa.classpath.Project
-import org.kaakaa.classpath.entry.LibraryEntry
+import org.kaakaa.classpath.ide.entry.LibraryEntry
 import scala.collection.mutable.ListBuffer
 import java.io.PrintWriter
+import org.kaakaa.classpath.ide.Project
 
 /**
  * Created by kaakaa_hoe on 2014/05/31.

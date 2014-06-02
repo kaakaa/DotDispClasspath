@@ -1,4 +1,4 @@
-package org.kaakaa.classpath
+package org.kaakaa.classpath.svn
 
 import scala.sys.process.Process
 import java.io.File
@@ -10,7 +10,7 @@ object SvnCommander {
   def recursiveList(url: String): List[String] = {
     var classpathFiles = List.empty[String]
 
-    for(
+    for (
       file <- list(url).split(sys.props("line.separator"))
       if ".classpath".equals(new File(file).getName())
     ) classpathFiles = url + file :: classpathFiles
@@ -19,7 +19,7 @@ object SvnCommander {
   }
 
   def list(url: String): String = {
-    Process("svn list --recursive " +  url) !!
+    Process("svn list --recursive " + url) !!
   }
 
   def cat(url: String): String = {
