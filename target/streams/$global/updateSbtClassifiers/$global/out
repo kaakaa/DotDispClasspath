@@ -567,7 +567,7 @@
 [debug] 	typesafe-ivy-releases: revision in cache: org.jetbrains#sbt-structure;2.3.2
 [debug] 	found org.jetbrains#sbt-structure;2.3.2 in sbt-chain
 [debug] 	[2.3.2] org.jetbrains#sbt-structure;2.3.2
-[debug] 	resolved ivy file produced in C:\Users\kaakaa_hoe\IdeaProjects\ScalaSample1\target\resolution-cache\scalasample1\scalasample1$sbt_2.10\1.0\resolved.xml.xml
+[debug] 	resolved ivy file produced in C:\Users\kaakaa_hoe\Documents\DotDispClasspath\target\resolution-cache\scalasample1\scalasample1$sbt_2.10\1.0\resolved.xml.xml
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.0!sbt.jar
 [debug] 	[NOT REQUIRED] org.jetbrains#sbt-structure;2.3.2!sbt-structure.jar
@@ -613,9 +613,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.0!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.0!apply-macro.jar
-[debug] :: resolution report :: resolve 498ms :: artifacts dl 30ms
-[debug] 	report for scalasample1#scalasample1$sbt_2.10;1.0 default produced in C:\Users\kaakaa_hoe\IdeaProjects\ScalaSample1\target\resolution-cache\reports\scalasample1-scalasample1$sbt_2.10-default.xml
-[debug] 	resolve done (498ms resolve - 30ms download)
+[debug] :: resolution report :: resolve 511ms :: artifacts dl 34ms
+[debug] 	report for scalasample1#scalasample1$sbt_2.10;1.0 default produced in C:\Users\kaakaa_hoe\Documents\DotDispClasspath\target\resolution-cache\reports\scalasample1-scalasample1$sbt_2.10-default.xml
+[debug] 	resolve done (511ms resolve - 34ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: scalasample1#scalasample1$sources_2.10;1.0
 [debug] 	confs: [default]
@@ -910,7 +910,7 @@
 [debug] 	typesafe-ivy-releases: revision in cache: org.jetbrains#sbt-structure;2.3.2
 [debug] 	found org.jetbrains#sbt-structure;2.3.2 in sbt-chain
 [debug] 	[2.3.2] org.jetbrains#sbt-structure;2.3.2
-[debug] 	resolved ivy file produced in C:\Users\kaakaa_hoe\IdeaProjects\ScalaSample1\target\resolution-cache\scalasample1\scalasample1$sources_2.10\1.0\resolved.xml.xml
+[debug] 	resolved ivy file produced in C:\Users\kaakaa_hoe\Documents\DotDispClasspath\target\resolution-cache\scalasample1\scalasample1$sources_2.10\1.0\resolved.xml.xml
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.0!sbt.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#main;0.13.0!main.jar(src)
@@ -956,6 +956,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.0!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.0!precompiled-2_9_3.jar(src)
 [debug] 	[NOT REQUIRED] org.jetbrains#sbt-structure;2.3.2!sbt-structure.jar(src)
-[debug] :: resolution report :: resolve 124ms :: artifacts dl 29ms
-[debug] 	report for scalasample1#scalasample1$sources_2.10;1.0 default produced in C:\Users\kaakaa_hoe\IdeaProjects\ScalaSample1\target\resolution-cache\reports\scalasample1-scalasample1$sources_2.10-default.xml
-[debug] 	resolve done (124ms resolve - 29ms download)
+[debug] :: resolution report :: resolve 132ms :: artifacts dl 38ms
+[debug] 	report for scalasample1#scalasample1$sources_2.10;1.0 default produced in C:\Users\kaakaa_hoe\Documents\DotDispClasspath\target\resolution-cache\reports\scalasample1-scalasample1$sources_2.10-default.xml
+[debug] 	resolve done (132ms resolve - 38ms download)
