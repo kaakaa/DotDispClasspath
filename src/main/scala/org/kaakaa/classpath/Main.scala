@@ -6,12 +6,27 @@ import org.kaakaa.classpath.dot.DotFileCreater
 /**
  * Created by kaakaa_hoe on 2014/06/01.
  */
-class Main {
-  def Main(args: Array[String]): Unit = {
-    val rootUrl = args(0)
-    val toPath = args(0)
+object Main {
 
-    val projects = JarNameFinder.getDependencies(rootUrl)
-    DotFileCreater.output(projects, toPath)
+  def main(args: Array[String]): Unit = {
+    try {
+      val (rootUrl, toPath) = getArgs(args)
+
+      val projects = JarNameFinder.getDependencies(rootUrl)
+      DotFileCreater.output(projects, toPath)
+
+    }catch{
+      case e: IllegalArgumentException =>
+      println(e.getMessage())
+    }
+
   }
+  def getArgs(args: Array[String]): (String, String) = {
+    args.length match {
+      case 1 => (args(0), ".")
+      case 2 => (args(0), args(1))
+      case _ => throw new IllegalArgumentException("CLI Parameter is only one or two.")
+    }
+  }
+
 }
