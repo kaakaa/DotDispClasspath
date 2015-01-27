@@ -1,6 +1,6 @@
-name := "ScalaSample1"
+name := "DotDispClasspath"
 
-version := "1.0"
+version := "0.1"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" %"test"
     
