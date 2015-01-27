@@ -1,6 +1,6 @@
 package org.kaakaa.classpath.ide
 
-import org.kaakaa.classpath.ide.entry.{ContainerEntry, LibraryEntry, ClasspathEntry}
+import org.kaakaa.classpath.ide.entry.{ContainerEntry, LibraryEntry, SourceEntry, ClasspathEntry}
 import scala.xml.{XML, NodeSeq}
 import org.kaakaa.classpath.svn.SvnCommander
 
@@ -11,8 +11,13 @@ import org.kaakaa.classpath.svn.SvnCommander
 //  def this(url: String) = this("NoName", this.getClasspathEntries(url))
 
 class Project(url: String) {
-  val name = "NoName"
+  val name = getProjectName(url)
   val classpaths = getClasspathEntries(url)
+
+  def getProjectName(url: String): String = {
+    val array = url.split('/')
+    array(array.length - 2)
+  }
 
   def getLineInDotFormat(): List[String] = {
     var result = List.empty[String]
@@ -30,6 +35,7 @@ class Project(url: String) {
         entry \ "@kind" text match {
           case "lib" => list = new LibraryEntry(entry) :: list
           case "con" => list = new ContainerEntry(entry) :: list
+          case "src" => list = new SourceEntry(entry) :: list
           case _ =>
         }
       }

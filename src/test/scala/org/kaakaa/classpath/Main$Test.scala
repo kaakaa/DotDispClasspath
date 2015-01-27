@@ -8,7 +8,7 @@ import org.scalatest.FunSpec
 class Main$Test extends FunSpec {
   describe("main"){
     it("one argument"){
-      Main.main(Array("http://localhost/svn/SampleProject/"))
+      Main.main(Array("svn://localhost/Users/kaakaa_hoe/Documents/Learning/Scala/DotDispClasspath/test/"))
     }
   }
 }
