@@ -4,3 +4,12 @@ scala:
 jdk:
 - oraclejdk7
 script: sbt ++$TRAVIS_SCALA_VERSION package
+deploy:
+  provider: releases
+  api_key:
+    secure: hYUh6qQ61A4SKmcORCU+ecF4+xOLg8TGF0y9pimukmtoRrzn4IgmH7i/vEcWMib3O0WZS5buccbfVwhxNa/UulCkUJ2eDY+7hrBYXgrfmzgLRINqNIWJw+2cUuNt5gdQ2Rs0Ok2WtaRVDhwgkpnuVBnhk8boAc/7BqGS4Odk63w=
+  file: target/scala-2.11/dotdispclasspath_2.11-0.1.jar
+  on:
+    repo: kaakaa/DotDispClasspath
+    tags: true
+  skip_cleanup: true
