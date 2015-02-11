@@ -1,0 +1,13 @@
+[
+{"type": "view", "name": "test", "depends": ["asm","examples","w3c_dom","sax","reference","resource","tools","jsr166","relaxngDatatype"]}
+,{"type": "view", "name": "hoge", "depends": ["asm","examples","w3c_dom","sax","reference","resource","tools","jsr166","relaxngDatatype"]}
+,{"type": "view", "name": "asm", "depends": []}
+,{"type": "view", "name": "examples", "depends": []}
+,{"type": "view", "name": "w3c_dom", "depends": []}
+,{"type": "view", "name": "sax", "depends": []}
+,{"type": "view", "name": "reference", "depends": []}
+,{"type": "view", "name": "resource", "depends": []}
+,{"type": "view", "name": "tools", "depends": []}
+,{"type": "view", "name": "jsr166", "depends": []}
+,{"type": "view", "name": "relaxngDatatype", "depends": []}
+]

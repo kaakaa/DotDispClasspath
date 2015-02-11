@@ -19,11 +19,21 @@ class Project(url: String) {
     array(array.length - 2)
   }
 
-  def getLineInDotFormat(): List[String] = {
-    var result = List.empty[String]
-    for (cp <- classpaths) {
-      result = "%s -> %s;".format(name, cp.getPath()) :: result
+  def getClassPathNames(): List[String] = {
+    classpaths.map(c => c.getPath()).filter(n => n.length() > 2)
+  }
+
+  def getLineInDotFormat(): String = {
+    val builder = new StringBuilder
+    builder.append('[')
+    for (cp <- classpaths if cp.getPath().length() > 2) {
+      builder.append(cp.getPath())
+      builder.append(',')
     }
+    builder.setLength(builder.length() - 1)
+    builder.append(']')
+
+    val result = """{"type": "view", "name": "%s", "depends": %s}""".format(name, builder.toString())
     result
   }
 
