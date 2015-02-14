@@ -22,17 +22,20 @@ object DotFileCreater {
   def makeDotText(projects: List[Project]): String = {
     var result = List("[")
     var prefix = ""
+
+    // to json object that has dependencies
     for (p <- projects) {
       result = result ::: List(prefix.concat(p.getLineInDotFormat()))
       prefix = ","
     }
 
+    // to json object that has no dependencies
     var pathList: List[String] = List.empty
     for (p <- projects) {
       pathList = pathList ::: p.getClassPathNames()
     }
     for (path <- pathList.distinct) {
-      result = result ::: List(prefix.concat("""{"type": "view", "name": %s, "depends": []}""".format(path)))
+      result = result ::: List(prefix.concat("""{"type": "Library", "name": %s, "depends": []}""".format(path)))
     }
 
     result = result ::: List("]")

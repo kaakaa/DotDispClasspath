@@ -33,7 +33,7 @@ class Project(url: String) {
     builder.setLength(builder.length() - 1)
     builder.append(']')
 
-    val result = """{"type": "view", "name": "%s", "depends": %s}""".format(name, builder.toString())
+    val result = """{"type": "Project", "name": "%s", "depends": %s}""".format(name, builder.toString())
     result
   }
 

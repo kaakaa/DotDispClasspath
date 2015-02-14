@@ -1,13 +1,13 @@
 [
-{"type": "view", "name": "test", "depends": ["asm","examples","w3c_dom","sax","reference","resource","tools","jsr166","relaxngDatatype"]}
-,{"type": "view", "name": "hoge", "depends": ["asm","examples","w3c_dom","sax","reference","resource","tools","jsr166","relaxngDatatype"]}
-,{"type": "view", "name": "asm", "depends": []}
-,{"type": "view", "name": "examples", "depends": []}
-,{"type": "view", "name": "w3c_dom", "depends": []}
-,{"type": "view", "name": "sax", "depends": []}
-,{"type": "view", "name": "reference", "depends": []}
-,{"type": "view", "name": "resource", "depends": []}
-,{"type": "view", "name": "tools", "depends": []}
-,{"type": "view", "name": "jsr166", "depends": []}
-,{"type": "view", "name": "relaxngDatatype", "depends": []}
+{"type": "Project", "name": "test", "depends": ["asm","examples","w3c_dom","sax","reference","resource","tools","jsr166","relaxngDatatype"]}
+,{"type": "Project", "name": "hoge", "depends": ["asm","examples","w3c_dom","sax","reference","resource","tools","jsr166","relaxngDatatype"]}
+,{"type": "Library", "name": "asm", "depends": []}
+,{"type": "Library", "name": "examples", "depends": []}
+,{"type": "Library", "name": "w3c_dom", "depends": []}
+,{"type": "Library", "name": "sax", "depends": []}
+,{"type": "Library", "name": "reference", "depends": []}
+,{"type": "Library", "name": "resource", "depends": []}
+,{"type": "Library", "name": "tools", "depends": []}
+,{"type": "Library", "name": "jsr166", "depends": []}
+,{"type": "Library", "name": "relaxngDatatype", "depends": []}
 ]
